@@ -10,8 +10,8 @@ Unfortunatelly [Arduino UNO](https://www.arduino.cc/) is not equipped with WiFi.
 ```c
 #include <ESP8266WiFi.h>
  
-const char* ssid = "AndreaAP";
-const char* password = "pagepage";
+const char* ssid = "******";
+const char* password = "******";
 
 const int AnalogIn  = A0;
 
