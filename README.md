@@ -12,6 +12,7 @@ Inspiring talk by David Rose
 1. [Introduction](intro.md)
 2. [Internet](internet.md)
 3. [Internet on a thing](arduino.md)
+4. [Code and Resources](/code/README.md)
 
 
 [This document on GitHub](https://github.com/andreavitaletti/IoT4PD) 
