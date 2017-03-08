@@ -1,4 +1,4 @@
-# Arduino IoT
+# Internet on a Thing
 
 Unfortunatelly [Arduino UNO](https://www.arduino.cc/) is not equipped with WiFi. You have either to buy a suitable shield or you can use the [nodeMCU](http://www.nodemcu.com/index_en.html) 
 >The Development Kit based on ESP8266, integates GPIO, PWM, IIC, 1-Wire and ADC all in one board. 

@@ -1,14 +1,6 @@
-# Table of contents
-
-
-1. [Introduction](#introduction)
-2. [Internet](#internet)
-
 #Preliminaries
 
 [Iot for Product Designer Blog](http://iot4pd.blogspot.it/) 
-
-[This document on GitHub](https://github.com/andreavitaletti/IoT4PD) 
 
 ## [What is the IoT](https://youtu.be/wL34vK-On3o)
 
@@ -164,50 +156,3 @@ The ability of learning allow us to implement a smarter object capable to answer
 ![](./assets/regression.jpg) 
 
 
-# Internet
-
-![graph](/assets/Internet.jpg  "graph")
-
-## The basic idea
-![](/assets/Internet_arch.jpg) 
-
-## Addressing
-
-
-[151.100.101.85](http://151.100.101.85/) 
-
-[www.uniroma1.it](http://www.uniroma1.it) 
-
-[http://www.uniroma1.it/index.](http://www.uniroma1.it/index.php) 
-
-## Platform
-
-![](/assets/aws.png) 
-
-## Protocol
-
-![](/assets/protocol.png) 
-
-
-
-## HTTP Protocol
-
-![](/assets/http.png) 
-
-### HTTP Request
-
-![](/assets/HTTPrequest.jpg) 
-
-### HTTP Response
-
-![](/assets/HTTPresponse.jpg) 
-
-### Exercise
-
-1. Open any URL (e.g. http://www.uniroma1.it) on chrome.
-2. Click with the right button an choose inspect
-3. Look the Network TAB
-
-![](/assets/exercise1.png) 
-
-# Internet on a thing
