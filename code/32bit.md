@@ -5,7 +5,7 @@
 2. New
 3. Name = Iot4pdserver32, Type = Linux, Version = Ubuntu (32 bit) and Next
 4. 2048 MB, and Next
-5. use an existing virtual hard disk file and select the file you have downloaded at step 0 named iot4pdserver.vdi
+5. use an existing virtual hard disk file and select the file you have downloaded at step 0 named iot4pdserver32.vdi
 6. Add a network interface as in the picture below
 
 ![](../assets/vbox3.png)
