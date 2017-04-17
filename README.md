@@ -13,6 +13,7 @@ Inspiring talk by David Rose
 2. [Internet](internet.md)
 3. [Internet on a thing](arduino.md)
 4. [Node Red](node_red.md)
+5. [Web of Things](wot.md)
 5. [Code and Resources](/code/README.md)
 
 
