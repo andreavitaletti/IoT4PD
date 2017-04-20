@@ -14,7 +14,7 @@ In order to simulate such complex environment, we will use [node-red](https://no
 
 ![](/assets/node-red-ex1.png) 
 
-In this example the [simulated thing](/code/simulated_thing.nrd)tab in node-red, simulates the simulated_thing. In this tab, there are two flows, one for the temperature sensor, named temperature1, and one for the switch actuator, named switch1.
+In this example the [simulated thing](/code/simulated_thing.nrd) tab in node-red, simulates the simulated_thing. In this tab, there are two flows, one for the temperature sensor, named temperature1, and one for the switch actuator, named switch1.
 
 The access to the sensor/actuator is via HTTP GET method. In particular, given that the addree of the node-red server is http://192.168.56.100:1880
 
