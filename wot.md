@@ -59,6 +59,6 @@ The switch node make the decision on the basis of the value of the msg.payload t
 
 Now from branch1 (temp < 30) we switch on the switch1 using the GET method implemented before, namely  HTTP GET on the URL http://192.168.56.100:1880/switch1?value=ON otherwise in branch2 we switch it off with  HTTP GET on the URL http://192.168.56.100:1880/switch1?value=OFF
 
-#Exercise
+## Exercise
 
-![](/assets/exercise2.png) 
+![](/assets/exercise2.jpg) 
