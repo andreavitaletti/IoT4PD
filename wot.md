@@ -14,7 +14,7 @@ In order to simulate such complex environment, we will use [node-red](https://no
 
 ![](/assets/node-red-ex1.png) 
 
-In this example the simulated thing tab in node-red, simulates the simulated_thing. In this tab, there are two flows, one for the temperature sensor, named temperature1, and one for the switch actuator, named switch1.
+In this example the [simulated thing](/code/simulated_thing.nrd)tab in node-red, simulates the simulated_thing. In this tab, there are two flows, one for the temperature sensor, named temperature1, and one for the switch actuator, named switch1.
 
 The access to the sensor/actuator is via HTTP GET method. In particular, given that the addree of the node-red server is http://192.168.56.100:1880
 
@@ -49,7 +49,7 @@ else
 return msg;
 ```
 
-Finally assume that the server, implemented in the simulated server tab in node-red has to read the temperature value from the simulated thing and switch on/off the switch1 according to a given threshold on temperature1.
+Finally assume that the server, implemented in the [simulated server](/code/simulated_server.nrd) tab in node-red has to read the temperature value from the simulated thing and switch on/off the switch1 according to a given threshold on temperature1.
 
 When accessed at http://192.168.56.100:1880/service1 the server connects to the temperature1 sensor an get the temperature. 
 
