@@ -127,3 +127,19 @@ void loop() {
   
 }
 ```
+
+## Interacting with node-red
+
+A convenient way to make your arduino device interacting with node-red is the follwing
+
+1) Acitvate tetering on your mobile
+2) Shut down the virtual machine
+3) Change the network connection from *Host-only* Adapter to *Bridged Adapter*. *Be sure to use your WiFi Interface  connected with the tetering
+4) start the virtual machine
+5) check the interface with ifconfig
+6) start node-red
+7) Connect from your mobile phone or PC in tetering
+
+
+
+
