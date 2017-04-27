@@ -14,7 +14,8 @@ Inspiring talk by David Rose
 3. [Internet on a thing](arduino.md)
 4. [Node Red](node_red.md)
 5. [Web of Things](wot.md)
-5. [Code and Resources](/code/README.md)
+6. [Very basic stats and machine learning](ml.md)
+7. [Code and Resources](/code/README.md)
 
 
 [This document on GitHub](https://github.com/andreavitaletti/IoT4PD) 
