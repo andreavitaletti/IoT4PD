@@ -1,4 +1,4 @@
-#Very basic statistics and machine learning 
+# Very basic statistics and machine learning 
 
 Statistics and machine learning, can be quite complex topics. However, we largely discussed the importance of stats and machine learning in IoT, and in this section we will do some very basic experiments to show the concept. 
 
