@@ -1,12 +1,30 @@
 # Internet
 
-![graph](/assets/Internet.jpg  "graph")
+Well, to understand the Internet of Things, we have to understand the Internet.
 
-## The basic idea
-![](/assets/Internet_arch.jpg) 
+![graph](/assets/Internet_map.png  "graph")
+
+The [Internet](https://en.wikipedia.org/wiki/Internet) is the global system of interconnected computer networks that use the Internet protocol suite (TCP/IP) to link devices worldwide. 
+
+## TCP/IP
+
+TCP/IP is the suite of communications protocols used to connect hosts on the Internet. TCP/IP uses several protocols, the main ones are TCP and IP.
+
+### Internet Protocol 
+
+IP specifies the format of packets, also called datagrams, and the addressing scheme.
+
+IP is connectionless, namely each message is divided into packets. Each packet includes complete addressing information. The packets are routed individually, sometimes resulting in different paths and out-of-order delivery. Each packet is labeled with a destination address, source address, and port numbers.
+
+![graph](/assets/Packet_Switching.gif  "graph")
+
+### Transmission Control Protocol 
+
+Whereas the IP protocol deals only with packets, TCP enables two hosts to establish a connection and exchange streams of data. TCP guarantees delivery of data and also guarantees that packets will be delivered in the same order in which they were sent.
 
 ## Addressing
 
+Each resource over the Internet is identified by a Unique Address
 
 [151.100.101.85](http://151.100.101.85/) 
 
@@ -14,44 +32,3 @@
 
 [http://www.uniroma1.it/index.](http://www.uniroma1.it/index.php) 
 
-## Platform
-
-![](/assets/aws.png) 
-
-## Protocol
-
-![](/assets/protocol.png) 
-
-
-
-## HTTP Protocol
-
-![](/assets/http.png) 
-
-### HTTP Request
-
-![](/assets/HTTPrequest.jpg) 
-
-Main methods are
-* GET
-* POST
-* PUT 
-* DELETE
-
-[GET vs. POST](https://www.w3schools.com/tags/ref_httpmethods.asp)
-
-### HTTP Response
-
-![](/assets/HTTPresponse.jpg) 
-
-### Exercise
-
-1. Open any URL (e.g. http://www.uniroma1.it) on chrome.
-2. Click with the right button an choose inspect
-3. Look the Network TAB
-
-![](/assets/exercise1.png) 
-
-# REST and CRUD
-
-![](/assets/REST_CRUD.png) 

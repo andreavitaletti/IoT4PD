@@ -1,6 +1,6 @@
 # IoT4PD
 
-The purpose of this project is to share my experience on the lectures on the Internet of Things for Product Designers
+The purpose of this project is to share my experience on the lectures on the *Internet of Things for Product Designers*
 
 Inspiring talk by David Rose 
 
@@ -9,15 +9,17 @@ Inspiring talk by David Rose
 # Table of contents
 
 
-1. [Introduction](intro.md)
-2. [Internet](internet.md)
-3. [Internet on a thing](arduino.md)
-4. [Node Red](node_red.md)
-5. [Web of Things](wot.md)
-6. [Very basic stats and machine learning](ml.md)
-7. [Code and Resources](/code/README.md)
+* [Introduction](intro.md)
+* [Internet](internet.md)
+* [Client Server and HTTP](cshttp.md)
+* [Node Red](node_red.md)
+* [Web of Things](wot.md)
+* [Internet on a thing](arduino.md)
+* [Very basic stats and machine learning](ml.md)
+* [Beyond Client Server... the Publish Subscribe Paradigm](ps.md)
+* [Code and Resources](./code/README.md)
 
 
 [This document on GitHub](https://github.com/andreavitaletti/IoT4PD) 
 
-I use [Grip](https://github.com/joeyespo/grip) to preview my [Markdown](https://daringfireball.net/projects/markdown/) files.
+I use [Markdown Preview Plus](https://chrome.google.com/webstore/detail/markdown-preview-plus/febilkbfcbhebfnokafefeacimjdckgl) to preview my [Markdown](https://daringfireball.net/projects/markdown/) files.

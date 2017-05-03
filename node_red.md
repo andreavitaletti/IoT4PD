@@ -1,7 +1,10 @@
 # [NODE RED](https://nodered.org/)
 
+Node Red is the tool we will use to experiment with the IoT. 
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/f5o4tIz2Zzc/0.jpg)](https://www.youtube.com/watch?v=f5o4tIz2Zzc)
+
+[Here](./code/README.md) there are the instruction to install Node red on a Virtual Machine
 
 
 ## In its essence
@@ -44,21 +47,21 @@ The message flows over the link (wire) connecting the inject blue node with the 
 ![Smart Object](/assets/NR_POST_PARAM.png  "Basic Node Red Flow")
 ![Smart Object](/assets/NR_POST_PARAM_RESULT.png  "Basic Node Red Flow")
 
-## install [node-red-dashboard](http://flows.nodered.org/node/node-red-dashboard)
+## Install [node-red-dashboard](http://flows.nodered.org/node/node-red-dashboard)
 
 From the terminal 
-1) stop noder-red with ```control+c```
-2) ```sudo npm install -g node-red-dashboard```
-3) start node red with ```node-red```
+1. stop noder-red with ```control+c```
+2. ```sudo npm install -g node-red-dashboard```
+3. start node red with ```node-red```
 
-## [install](http://stackoverflow.com/questions/38481130/use-an-external-js-library-in-a-node-red-function) a [js library](http://simplestatistics.org/docs/) for experimenting with simple machine learning and stats
+## [Install](http://stackoverflow.com/questions/38481130/use-an-external-js-library-in-a-node-red-function) a [js library](http://simplestatistics.org/docs/) for experimenting with simple machine learning and stats
 
 
 From the terminal 
-1) stop noder-red with ```control+c```
-2) ```cd ./~node-red```
-3) edit settings.js ```nano settings.js```
-4) find the line 
+1. stop noder-red with ```control+c```
+2. ```cd ./~node-red```
+3. edit settings.js ```nano settings.js```
+4. find the line 
 ```
 functionGlobalContext: {
    ...
@@ -70,7 +73,14 @@ functionGlobalContext: {
    st: require('simple-statistics')
 },
 ```
-5) save the change ```CTRL+o``` and exit ```CTRL+x```
-6) ```cd ./~node-red/node-modules```
-7) ```npm install simple-statistics```
-8) start node red with ```node-red```
+5. save the change ```CTRL+o``` and exit ```CTRL+x```
+6. ```cd ./~node-red/node-modules```
+7. ```npm install simple-statistics```
+8. start node red with ```node-red```
+
+## Install [node-red-node-dweetio](https://www.npmjs.com/package/node-red-node-dweetio)
+
+From the terminal 
+1. stop noder-red with ```control+c```
+2. ```sudo npm install -g node-red-node-dweetio```
+3. start node red with ```node-red```
