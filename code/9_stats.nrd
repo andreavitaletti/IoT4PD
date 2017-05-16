@@ -1,0 +1,233 @@
+[
+    {
+        "id": "2fb6dad9.9099e6",
+        "type": "tab",
+        "label": "statistics"
+    },
+    {
+        "id": "e1bc5b47.3024b8",
+        "type": "inject",
+        "z": "2fb6dad9.9099e6",
+        "name": "generate data",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 157.24489484514507,
+        "y": 142.6530565534319,
+        "wires": [
+            [
+                "ead728d4.6c2118"
+            ]
+        ]
+    },
+    {
+        "id": "ead728d4.6c2118",
+        "type": "function",
+        "z": "2fb6dad9.9099e6",
+        "name": "test",
+        "func": "var count_now = context.get('whatitellyou4') || 0;\ncount_now += 1;\ncontext.set('whatitellyou4',count_now);\n\nmsg.payload=[count_now,count_now+3+Math.random()];\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 394.38779067993164,
+        "y": 239.7959690093994,
+        "wires": [
+            [
+                "2f76a25.082615e",
+                "67d55b5a.3b0204"
+            ]
+        ]
+    },
+    {
+        "id": "2f76a25.082615e",
+        "type": "debug",
+        "z": "2fb6dad9.9099e6",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 610.102059500558,
+        "y": 201.0204097202846,
+        "wires": []
+    },
+    {
+        "id": "67d55b5a.3b0204",
+        "type": "file",
+        "z": "2fb6dad9.9099e6",
+        "name": "",
+        "filename": "./data.txt",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "false",
+        "x": 647.7551422119141,
+        "y": 392.0408344268799,
+        "wires": []
+    },
+    {
+        "id": "7cbb4362.c7478c",
+        "type": "file in",
+        "z": "2fb6dad9.9099e6",
+        "name": "",
+        "filename": "./data.txt",
+        "format": "utf8",
+        "x": 338.8681831359863,
+        "y": 486.76769065856934,
+        "wires": [
+            [
+                "ae519f5e.73eee"
+            ]
+        ]
+    },
+    {
+        "id": "ee55d6aa.854898",
+        "type": "inject",
+        "z": "2fb6dad9.9099e6",
+        "name": "compute stats",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 166.42855834960938,
+        "y": 440.4709053039551,
+        "wires": [
+            [
+                "7cbb4362.c7478c"
+            ]
+        ]
+    },
+    {
+        "id": "2acc5835.82c138",
+        "type": "debug",
+        "z": "2fb6dad9.9099e6",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "payload",
+        "x": 713.2418785095215,
+        "y": 600.6687431335449,
+        "wires": []
+    },
+    {
+        "id": "25ad6eee.0abcc2",
+        "type": "inject",
+        "z": "2fb6dad9.9099e6",
+        "name": "clear data",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 146.32649993896484,
+        "y": 279.59183502197266,
+        "wires": [
+            [
+                "994a5344.c716e"
+            ]
+        ]
+    },
+    {
+        "id": "994a5344.c716e",
+        "type": "file",
+        "z": "2fb6dad9.9099e6",
+        "name": "",
+        "filename": "./data.txt",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "delete",
+        "x": 388.94557189941406,
+        "y": 368.16324043273926,
+        "wires": []
+    },
+    {
+        "id": "ae519f5e.73eee",
+        "type": "function",
+        "z": "2fb6dad9.9099e6",
+        "name": "stats",
+        "func": "var ST = context.global.get('st');\n//msg.payload = ST.linearRegression([[0, 0], [1, 1]]); // => { m: 1, b: 0 }\n\nvar vec = msg.payload.split(\"\\n\");\n//var vec = [\"[0, 1]\", \"[1, 2]\", \"[2, 4]\"]\n\nvar data = [];\nfor (var i = 0; i < vec.length-1; i++) {\n    var array_elem = JSON.parse(vec[i]);\n    data.push(array_elem);\n}\n\nconsole.log(data);\n\nmsg.payload=ST.linearRegression(data);\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 500.10205950055797,
+        "y": 484.2857388087681,
+        "wires": [
+            [
+                "2acc5835.82c138"
+            ]
+        ]
+    },
+    {
+        "id": "f42c9cd2.5ee01",
+        "type": "inject",
+        "z": "2fb6dad9.9099e6",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "x": 132.41667429606116,
+        "y": 619.6666590372721,
+        "wires": [
+            [
+                "168c553a.95ca0b"
+            ]
+        ]
+    },
+    {
+        "id": "168c553a.95ca0b",
+        "type": "function",
+        "z": "2fb6dad9.9099e6",
+        "name": "",
+        "func": "var count_now = context.get('whatitellyou4') || 0;\ncount_now += 1;\ncontext.set('whatitellyou4',count_now);\n\nmsg.payload=[count_now,count_now+3+Math.random()];\n\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 309.91667429606116,
+        "y": 653.3333460489907,
+        "wires": [
+            [
+                "8adfbc25.00473"
+            ]
+        ]
+    },
+    {
+        "id": "8adfbc25.00473",
+        "type": "dweetio out",
+        "z": "2fb6dad9.9099e6",
+        "thing": "my_generated_data",
+        "name": "",
+        "x": 466.5833409627278,
+        "y": 614.8333358764647,
+        "wires": []
+    },
+    {
+        "id": "482b7a5f.59fe74",
+        "type": "dweetio in",
+        "z": "2fb6dad9.9099e6",
+        "thing": "my_generated_data",
+        "name": "",
+        "x": 111.58334096272785,
+        "y": 725.166664123535,
+        "wires": [
+            [
+                "8d75ad00.fac5b"
+            ]
+        ]
+    },
+    {
+        "id": "8d75ad00.fac5b",
+        "type": "debug",
+        "z": "2fb6dad9.9099e6",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 416.5833409627278,
+        "y": 772.5000127156575,
+        "wires": []
+    }
+]

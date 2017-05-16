@@ -1,0 +1,243 @@
+[
+    {
+        "id": "c8e46128.7b9a1",
+        "type": "tab",
+        "label": "UI"
+    },
+    {
+        "id": "95f72429.7d1598",
+        "type": "inject",
+        "z": "c8e46128.7b9a1",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "x": 249.86363220214844,
+        "y": 299.678955078125,
+        "wires": [
+            [
+                "2db9b3cf.977a3c"
+            ]
+        ]
+    },
+    {
+        "id": "75623368.1df53c",
+        "type": "ui_chart",
+        "z": "c8e46128.7b9a1",
+        "name": "",
+        "group": "f37b7de8.73b19",
+        "order": 0,
+        "width": "6",
+        "height": "3",
+        "label": "chart",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "x": 570.8721466064453,
+        "y": 348.9403381347656,
+        "wires": [
+            [],
+            []
+        ]
+    },
+    {
+        "id": "2db9b3cf.977a3c",
+        "type": "function",
+        "z": "c8e46128.7b9a1",
+        "name": "rnd",
+        "func": "msg.payload=Math.random();\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 431.86647033691406,
+        "y": 504.1391906738281,
+        "wires": [
+            [
+                "75623368.1df53c"
+            ]
+        ]
+    },
+    {
+        "id": "247f42f6.b15f7e",
+        "type": "ui_slider",
+        "z": "c8e46128.7b9a1",
+        "name": "",
+        "label": "slider",
+        "group": "f37b7de8.73b19",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "topic": "threshold",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "x": 181.53060913085935,
+        "y": 469.5918600899832,
+        "wires": [
+            [
+                "5ebd98d1.ee8d38",
+                "7b08ae67.e7521"
+            ]
+        ]
+    },
+    {
+        "id": "5ebd98d1.ee8d38",
+        "type": "ui_text",
+        "z": "c8e46128.7b9a1",
+        "group": "f37b7de8.73b19",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "text",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 438.6734880719866,
+        "y": 592.653078351702,
+        "wires": []
+    },
+    {
+        "id": "7b08ae67.e7521",
+        "type": "ui_gauge",
+        "z": "c8e46128.7b9a1",
+        "name": "",
+        "group": "f37b7de8.73b19",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Gauge",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 10,
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 230.10205459594727,
+        "y": 590.2041063308716,
+        "wires": []
+    },
+    {
+        "id": "294fcc2a.eeaac4",
+        "type": "ui_button",
+        "z": "c8e46128.7b9a1",
+        "name": "",
+        "group": "81b83660.c50d88",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "label": "button 1",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "button 1",
+        "payloadType": "str",
+        "topic": "",
+        "x": 177.2448959350586,
+        "y": 96.93877029418945,
+        "wires": [
+            [
+                "67aca56e.61b08c"
+            ]
+        ]
+    },
+    {
+        "id": "67aca56e.61b08c",
+        "type": "ui_text",
+        "z": "c8e46128.7b9a1",
+        "group": "81b83660.c50d88",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "text",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 604.3877737862723,
+        "y": 199.59183829171315,
+        "wires": []
+    },
+    {
+        "id": "1ad03024.b5072",
+        "type": "ui_button",
+        "z": "c8e46128.7b9a1",
+        "name": "",
+        "group": "81b83660.c50d88",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "label": "button 2",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "button 2",
+        "payloadType": "str",
+        "topic": "",
+        "x": 172.04078674316406,
+        "y": 189.18365478515625,
+        "wires": [
+            [
+                "67aca56e.61b08c"
+            ]
+        ]
+    },
+    {
+        "id": "f37b7de8.73b19",
+        "type": "ui_group",
+        "z": "",
+        "name": "test",
+        "tab": "17a403fb.a8fd5c",
+        "disp": true,
+        "width": "6"
+    },
+    {
+        "id": "81b83660.c50d88",
+        "type": "ui_group",
+        "name": "Group 1",
+        "tab": "f964e787.b534b8",
+        "order": 1,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "17a403fb.a8fd5c",
+        "type": "ui_tab",
+        "name": "Tab 1",
+        "icon": "dashboard",
+        "order": 1
+    },
+    {
+        "id": "f964e787.b534b8",
+        "type": "ui_tab",
+        "name": "Tab 2",
+        "icon": "dashboard",
+        "order": 2
+    }
+]

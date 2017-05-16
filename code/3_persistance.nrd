@@ -1,0 +1,112 @@
+[
+    {
+        "id": "fb7a7137.b4781",
+        "type": "tab",
+        "label": "Persistence"
+    },
+    {
+        "id": "bf1c3e81.f99d8",
+        "type": "inject",
+        "z": "fb7a7137.b4781",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 140.4999656677246,
+        "y": 363.00000190734863,
+        "wires": [
+            [
+                "e97fc7ea.db7c58"
+            ]
+        ]
+    },
+    {
+        "id": "e97fc7ea.db7c58",
+        "type": "file",
+        "z": "fb7a7137.b4781",
+        "name": "",
+        "filename": "./test.txt",
+        "appendNewline": true,
+        "createDir": false,
+        "overwriteFile": "false",
+        "x": 457.80001831054676,
+        "y": 438.79998779296864,
+        "wires": []
+    },
+    {
+        "id": "98527f31.75cfe",
+        "type": "file in",
+        "z": "fb7a7137.b4781",
+        "name": "",
+        "filename": "./test.txt",
+        "format": "utf8",
+        "x": 321.0307922363281,
+        "y": 532.984697341919,
+        "wires": [
+            [
+                "e6fb62e7.6562b",
+                "b0343022.83f65"
+            ]
+        ]
+    },
+    {
+        "id": "e6fb62e7.6562b",
+        "type": "debug",
+        "z": "fb7a7137.b4781",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "payload",
+        "x": 525.9538955688477,
+        "y": 511.107702255249,
+        "wires": []
+    },
+    {
+        "id": "82fc9830.96b9f8",
+        "type": "inject",
+        "z": "fb7a7137.b4781",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 99.79998779296872,
+        "y": 594.3999938964843,
+        "wires": [
+            [
+                "98527f31.75cfe"
+            ]
+        ]
+    },
+    {
+        "id": "b0343022.83f65",
+        "type": "split",
+        "z": "fb7a7137.b4781",
+        "name": "",
+        "splt": "\\n",
+        "x": 494.17126083374023,
+        "y": 663.797788143158,
+        "wires": [
+            [
+                "6efa60a9.855c"
+            ]
+        ]
+    },
+    {
+        "id": "6efa60a9.855c",
+        "type": "debug",
+        "z": "fb7a7137.b4781",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 663.8692493438721,
+        "y": 591.2239999771118,
+        "wires": []
+    }
+]

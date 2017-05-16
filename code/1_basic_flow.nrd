@@ -1,0 +1,38 @@
+[
+    {
+        "id": "8990cd41.38c3a",
+        "type": "tab",
+        "label": "Basic Flow"
+    },
+    {
+        "id": "bf510595.4f31a8",
+        "type": "inject",
+        "z": "8990cd41.38c3a",
+        "name": "",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "x": 109.18628147670198,
+        "y": 80.69601876395087,
+        "wires": [
+            [
+                "c79e01a5.d8a07"
+            ]
+        ]
+    },
+    {
+        "id": "c79e01a5.d8a07",
+        "type": "debug",
+        "z": "8990cd41.38c3a",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 333.4760502406528,
+        "y": 182.42085048130576,
+        "wires": []
+    }
+]

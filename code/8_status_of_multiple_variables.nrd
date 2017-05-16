@@ -1,0 +1,161 @@
+[
+    {
+        "id": "6850f9d2.42e9d8",
+        "type": "tab",
+        "label": "status of multiple variables"
+    },
+    {
+        "id": "dcd6115f.5f346",
+        "type": "ui_slider",
+        "z": "6850f9d2.42e9d8",
+        "name": "",
+        "label": "due",
+        "group": "a36ce5ea.bb4d38",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "topic": "due",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "x": 532.1111221313477,
+        "y": 426.00002098083496,
+        "wires": [
+            [
+                "1d360e2b.e22022"
+            ]
+        ]
+    },
+    {
+        "id": "48644084.c64ad",
+        "type": "ui_slider",
+        "z": "6850f9d2.42e9d8",
+        "name": "",
+        "label": "uno",
+        "group": "a36ce5ea.bb4d38",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "topic": "uno",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "x": 528.7777633666992,
+        "y": 379.33337211608887,
+        "wires": [
+            [
+                "1d360e2b.e22022"
+            ]
+        ]
+    },
+    {
+        "id": "f635dc12.eec83",
+        "type": "ui_slider",
+        "z": "6850f9d2.42e9d8",
+        "name": "",
+        "label": "tre",
+        "group": "a36ce5ea.bb4d38",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "topic": "tre",
+        "min": 0,
+        "max": 10,
+        "step": 1,
+        "x": 533.2222557067871,
+        "y": 470.44444847106934,
+        "wires": [
+            [
+                "1d360e2b.e22022"
+            ]
+        ]
+    },
+    {
+        "id": "61b7d77c.f03ec8",
+        "type": "ui_text",
+        "z": "6850f9d2.42e9d8",
+        "group": "a36ce5ea.bb4d38",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "text",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 924.3334121704102,
+        "y": 320.2222137451172,
+        "wires": []
+    },
+    {
+        "id": "66197527.97867c",
+        "type": "ui_button",
+        "z": "6850f9d2.42e9d8",
+        "name": "",
+        "group": "a36ce5ea.bb4d38",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "label": "Send Recipe",
+        "color": "",
+        "bgcolor": "",
+        "icon": "",
+        "payload": "",
+        "payloadType": "str",
+        "topic": "go",
+        "x": 536.5555657280815,
+        "y": 557.1111212836371,
+        "wires": [
+            [
+                "1d360e2b.e22022"
+            ]
+        ]
+    },
+    {
+        "id": "1d360e2b.e22022",
+        "type": "function",
+        "z": "6850f9d2.42e9d8",
+        "name": "",
+        "func": "var uno = context.get('uno') || 0;\nvar due = context.get('due') || 0;\nvar tre = context.get('tre') || 0;\n\n\nif (msg.topic==\"uno\"){\ncontext.set('uno',msg.payload);\n}\n\nif (msg.topic==\"due\"){\ncontext.set('due',msg.payload);\n}\n\nif (msg.topic==\"tre\"){\ncontext.set('tre',msg.payload);\n}\n\n\nif (msg.topic==\"go\"){\nmsg.payload = uno + \" - \" + due + \" - \" + tre;\nreturn msg;\n}",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 782.1111221313477,
+        "y": 434.2222728729248,
+        "wires": [
+            [
+                "61b7d77c.f03ec8",
+                "c208563b.885a68"
+            ]
+        ]
+    },
+    {
+        "id": "c208563b.885a68",
+        "type": "debug",
+        "z": "6850f9d2.42e9d8",
+        "name": "",
+        "active": true,
+        "console": "false",
+        "complete": "false",
+        "x": 947.6666768391926,
+        "y": 503.7777964274088,
+        "wires": []
+    },
+    {
+        "id": "a36ce5ea.bb4d38",
+        "type": "ui_group",
+        "name": "Group 4",
+        "tab": "893f801c.65fa3",
+        "order": 4,
+        "disp": true,
+        "width": 6
+    },
+    {
+        "id": "893f801c.65fa3",
+        "type": "ui_tab",
+        "name": "Tab 4",
+        "icon": "dashboard",
+        "order": 4
+    }
+]

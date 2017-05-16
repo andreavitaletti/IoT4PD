@@ -1,0 +1,89 @@
+[
+    {
+        "id": "37fecbc5.21a724",
+        "type": "tab",
+        "label": "Simulated Thing"
+    },
+    {
+        "id": "a5021298.4b0f9",
+        "type": "http in",
+        "z": "37fecbc5.21a724",
+        "name": "",
+        "url": "/temperature1",
+        "method": "get",
+        "swaggerDoc": "",
+        "x": 264.92313385009766,
+        "y": 244.07694149017334,
+        "wires": [
+            [
+                "ccae39fd.f981a8"
+            ]
+        ]
+    },
+    {
+        "id": "ccae39fd.f981a8",
+        "type": "function",
+        "z": "37fecbc5.21a724",
+        "name": "",
+        "func": "msg.payload=60*Math.random();\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 433.9872741699219,
+        "y": 383.74366760253906,
+        "wires": [
+            [
+                "7c5cff8b.3c46"
+            ]
+        ]
+    },
+    {
+        "id": "7c5cff8b.3c46",
+        "type": "http response",
+        "z": "37fecbc5.21a724",
+        "name": "",
+        "x": 577.0385055541992,
+        "y": 273.82056999206543,
+        "wires": []
+    },
+    {
+        "id": "30fc54a.87065ac",
+        "type": "http in",
+        "z": "37fecbc5.21a724",
+        "name": "",
+        "url": "/switch1",
+        "method": "get",
+        "swaggerDoc": "",
+        "x": 459.6538772583008,
+        "y": 657.5641279220581,
+        "wires": [
+            [
+                "fb30efcb.41dea"
+            ]
+        ]
+    },
+    {
+        "id": "18a2b4e1.1a44eb",
+        "type": "http response",
+        "z": "37fecbc5.21a724",
+        "name": "",
+        "x": 922.6026382446289,
+        "y": 646.179612159729,
+        "wires": []
+    },
+    {
+        "id": "fb30efcb.41dea",
+        "type": "function",
+        "z": "37fecbc5.21a724",
+        "name": "",
+        "func": "if (msg.req.query.value==\"ON\")\n    {\n        msg.payload = \" I switch on the switch\";\n        return msg;\n    }\nif (msg.req.query.value==\"OFF\")\n    {\n        msg.payload = \" I switch off the switch\";\n        \n    }\nelse\n    {\n        msg.payload = \"I do not know this command\";\n    }\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 684.371826171875,
+        "y": 761.5897636413574,
+        "wires": [
+            [
+                "18a2b4e1.1a44eb"
+            ]
+        ]
+    }
+]
