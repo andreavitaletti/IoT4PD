@@ -15,3 +15,5 @@ Please go to the [wiki page](https://github.com/andreavitaletti/IoT4PD/wiki) for
 7. [Very simple Publish/Subscribe with dweet](code/7_PS_DWEET.nrd)
 8. [Get the status of multiple variable](code/8_status_of_multiple_variables.nrd)
 9. [Simple statistics and machine learning](code/9_stats.nrd)
+10. [Simple JSON](code/10_json.nrd)
+
