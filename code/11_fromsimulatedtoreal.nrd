@@ -1,0 +1,320 @@
+[
+    {
+        "id": "64d42672.3b2a48",
+        "type": "tab",
+        "label": "Coffe machine thing"
+    },
+    {
+        "id": "142dcf51.0cb831",
+        "type": "http in",
+        "z": "64d42672.3b2a48",
+        "name": "",
+        "url": "/coffe_machine_temperature",
+        "method": "get",
+        "swaggerDoc": "",
+        "x": 190,
+        "y": 71,
+        "wires": [
+            [
+                "9e22956d.ab6418"
+            ]
+        ]
+    },
+    {
+        "id": "9e22956d.ab6418",
+        "type": "function",
+        "z": "64d42672.3b2a48",
+        "name": "",
+        "func": "msg.payload=60*Math.random();\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 438.064208984375,
+        "y": 71.666748046875,
+        "wires": [
+            [
+                "f6c4f926.e29b38"
+            ]
+        ]
+    },
+    {
+        "id": "f6c4f926.e29b38",
+        "type": "http response",
+        "z": "64d42672.3b2a48",
+        "name": "",
+        "x": 702.115478515625,
+        "y": 74.74363708496094,
+        "wires": []
+    },
+    {
+        "id": "a81bb3a2.ebe73",
+        "type": "http in",
+        "z": "64d42672.3b2a48",
+        "name": "",
+        "url": "/coffe_machine_switch",
+        "method": "get",
+        "swaggerDoc": "",
+        "x": 184.730712890625,
+        "y": 171.4871826171875,
+        "wires": [
+            [
+                "c51659aa.9ff618"
+            ]
+        ]
+    },
+    {
+        "id": "59503057.3b786",
+        "type": "http response",
+        "z": "64d42672.3b2a48",
+        "name": "",
+        "x": 733.679443359375,
+        "y": 175.1026611328125,
+        "wires": []
+    },
+    {
+        "id": "c51659aa.9ff618",
+        "type": "function",
+        "z": "64d42672.3b2a48",
+        "name": "",
+        "func": "if (msg.req.query.value==\"ON\")\n    {\n        msg.payload = \" I switch on the switch\";\n        return msg;\n    }\nif (msg.req.query.value==\"OFF\")\n    {\n        msg.payload = \" I switch off the switch\";\n        \n    }\nelse\n    {\n        msg.payload = \"I do not know this command\";\n    }\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 436.44873046875,
+        "y": 171.5128173828125,
+        "wires": [
+            [
+                "59503057.3b786"
+            ]
+        ]
+    },
+    {
+        "id": "bbe28f3c.9a011",
+        "type": "http in",
+        "z": "64d42672.3b2a48",
+        "name": "",
+        "url": "/coffe_machine_switch_real",
+        "method": "get",
+        "swaggerDoc": "",
+        "x": 184,
+        "y": 375,
+        "wires": [
+            [
+                "71f4f83b.e317a8"
+            ]
+        ]
+    },
+    {
+        "id": "d15a2b35.fd5f08",
+        "type": "http response",
+        "z": "64d42672.3b2a48",
+        "name": "",
+        "x": 857.94873046875,
+        "y": 376.615478515625,
+        "wires": []
+    },
+    {
+        "id": "de830bc2.f575d8",
+        "type": "http request",
+        "z": "64d42672.3b2a48",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "url": "http://192.168.43.206/LED=ON",
+        "tls": "",
+        "x": 602,
+        "y": 257,
+        "wires": [
+            [
+                "d15a2b35.fd5f08"
+            ]
+        ]
+    },
+    {
+        "id": "71f4f83b.e317a8",
+        "type": "switch",
+        "z": "64d42672.3b2a48",
+        "name": "",
+        "property": "req.query.value",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "ON",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "OFF",
+                "vt": "str"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "outputs": 3,
+        "x": 411,
+        "y": 375,
+        "wires": [
+            [
+                "de830bc2.f575d8"
+            ],
+            [
+                "612522e.ad342dc"
+            ],
+            [
+                "121cf47f.0557bc"
+            ]
+        ]
+    },
+    {
+        "id": "612522e.ad342dc",
+        "type": "http request",
+        "z": "64d42672.3b2a48",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "url": "http://192.168.43.206/LED=OFF",
+        "tls": "",
+        "x": 603,
+        "y": 374,
+        "wires": [
+            [
+                "d15a2b35.fd5f08"
+            ]
+        ]
+    },
+    {
+        "id": "121cf47f.0557bc",
+        "type": "function",
+        "z": "64d42672.3b2a48",
+        "name": "",
+        "func": "msg.payload=\"I don't know this message\";\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 592,
+        "y": 457,
+        "wires": [
+            [
+                "d15a2b35.fd5f08"
+            ]
+        ]
+    },
+    {
+        "id": "230174af.d9224c",
+        "type": "ui_switch",
+        "z": "64d42672.3b2a48",
+        "name": "",
+        "label": "switch",
+        "group": "aa404b11.bb5058",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 157,
+        "y": 692,
+        "wires": [
+            [
+                "f6d271d8.f8c24"
+            ]
+        ]
+    },
+    {
+        "id": "f6d271d8.f8c24",
+        "type": "switch",
+        "z": "64d42672.3b2a48",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "true",
+        "outputs": 2,
+        "x": 356,
+        "y": 637,
+        "wires": [
+            [
+                "c7704120.e6744"
+            ],
+            [
+                "bb528e5b.bf1c1"
+            ]
+        ]
+    },
+    {
+        "id": "c7704120.e6744",
+        "type": "http request",
+        "z": "64d42672.3b2a48",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "url": "http://192.168.43.206/LED=ON",
+        "tls": "",
+        "x": 586,
+        "y": 592,
+        "wires": [
+            [
+                "cc5c1a63.4da9e8"
+            ]
+        ]
+    },
+    {
+        "id": "bb528e5b.bf1c1",
+        "type": "http request",
+        "z": "64d42672.3b2a48",
+        "name": "",
+        "method": "GET",
+        "ret": "txt",
+        "url": "http://192.168.43.206/LED=OFF",
+        "tls": "",
+        "x": 581,
+        "y": 683,
+        "wires": [
+            [
+                "cc5c1a63.4da9e8"
+            ]
+        ]
+    },
+    {
+        "id": "cc5c1a63.4da9e8",
+        "type": "http response",
+        "z": "64d42672.3b2a48",
+        "name": "",
+        "x": 827,
+        "y": 619,
+        "wires": []
+    },
+    {
+        "id": "aa404b11.bb5058",
+        "type": "ui_group",
+        "z": "",
+        "name": "Default",
+        "tab": "8e0e6f2a.7525d",
+        "disp": true,
+        "width": "6"
+    },
+    {
+        "id": "8e0e6f2a.7525d",
+        "type": "ui_tab",
+        "z": "",
+        "name": "Coffe machine",
+        "icon": "dashboard",
+        "order": 5
+    }
+]
