@@ -147,7 +147,65 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="introduction">Introduction</h1>
+                                <h1 id="smart-object">Smart Object</h1>
+<p>An object becomes smart when thanks to the technology it can do something better than its non-smart original version or it can even do something completely new and appreciated by the users.</p>
+<p><a href="https://www.youtube.com/watch?v=zRYbUjrJtp8&amp;t=91s" target="_blank"><img src="assets/images/2022-09-28-13-12-47.png" alt=""></a></p>
+<h1 id="from-smart-objects-to-internet-of-things">From smart Objects to Internet of Things</h1>
+<p>A smart object is part of the Internet of Thing (IoT) if it is connected and thanks to its connectivity, it is part of an ecosystem that allows to do something better than its non-connected original version or it can even do something completely new and appreciated by the members of the ecosystem.</p>
+<p><img src="assets/images/2022-09-28-13-14-24.png" alt=""></p>
+<h1 id="iot-is-more-than-remote-control">IoT is more than remote control</h1>
+<p><img src="assets/images/2022-09-28-13-15-48.png" alt=""></p>
+<h1 id="collective-intelligence">Collective Intelligence</h1>
+<p>Together we can do more than individually
+Collective intelligence is shared or group intelligence that emerges from the collaboration, collective efforts, and competition of many individuals and appears in consensus decision making.</p>
+<p><img src="assets/images/2022-09-28-13-19-29.png" alt=""></p>
+<h1 id="exercise">Exercise</h1>
+<ol>
+<li>Consider an objects</li>
+<li>Make the object at point 1 smart. Discuss why it is smart</li>
+<li>Make the smart object at point 2 part of the IoT. Discuss why it is part of the IoT</li>
+</ol>
+<h1 id="the-evolutio-of-internet">The Evolutio of Internet</h1>
+<p><img src="assets/images/2022-09-28-14-41-46.png" alt=""></p>
+<h1 id="maturity-level">Maturity Level</h1>
+<p><img src="assets/images/2022-09-28-14-34-39.png" alt=""></p>
+<ol>
+<li>Old fashion mechanic car</li>
+<li>A modern car with sensors and actuators</li>
+<li>The car is connected and deliver data on its usage (e.g. path, levels, usage etc.)</li>
+<li>The car can be remotely controlled </li>
+<li>on-car algorithms (e.g. ABS) and off-car algorithms (e.g. prediction of maintenance) to optimize performance</li>
+<li>Self-Driving car</li>
+<li>Car-2-Car</li>
+<li>Car-2-Car-2-Gas-2-Traffic Light ...</li>
+</ol>
+<h1 id="client-server">Client Server</h1>
+<p>It is the reference architecture for Internet applications</p>
+<pre><code class="lang-mermaid">graph LR;
+  id0[Client] --Request--&gt; id1[Server]
+
+  id1 --Response--&gt; id0
+</code></pre>
+<h1 id="the-protocol">The Protocol</h1>
+<h1 id="anatomy-of-a-web-app">Anatomy of a Web App</h1>
+<pre><code class="lang-mermaid">graph TB;
+  id0[Client] --Request--&gt; id1[User Interface]
+
+  id3[Data Layer] --- id4[(Database)];
+  id5((Things)) -- Data --&gt; id2;
+  id2[Business Logic] -- Commands --&gt; id5((Things));
+
+  id1[User Interface]  --Response--&gt; id0[Client]
+  id1[User Interface] --- id2[Business Logic];
+  id2[Business Logic] --- id3[Data Layer];
+
+  subgraph ide1 [Server]
+    id1;
+    id2;
+    id3;
+  end
+</code></pre>
+<h1 id="introduction">Introduction</h1>
 <p>This is probably the most simple flow. An inject block (light blue)  injects a msg with the timestamp in its payload (i.e. in msg.payload) when pushed. When the msg reaches the debug block (green) the content of the msg.payload (i.e. the timestamp) is shown in the debug window on the right.</p>
 <p><img src="assets/images/2022-09-20-11-44-55.png" alt=""></p>
 <p>The inject block can inject a number of messages</p>
@@ -161,12 +219,19 @@
 <p><img src="assets/images/2022-09-20-15-13-32.png" alt=""></p>
 <pre><code>mosquitto_pub -d -h mqtt3.thingspeak.com -u FSQpGyYbAgETCTkrOi87DTg \\ 
 -i FSQpGyYbAgETCTkrOi87DTg \\
--p 1883 -P &lt;Password&gt; \\
+-p 1883 -P <password> \\
 -t &quot;channels/633283/publish&quot; -m &quot;field1=45&amp;field2=60&amp;status=MQTTPUBLISH&quot; ; echo {% math_inline %}?
-</code></pre><p><img src="assets/images/2022-09-20-15-20-34.png" alt=""></p>
+</password></code></pre><p><img src="assets/images/2022-09-20-15-20-34.png" alt=""></p>
 <pre><code>&quot;field1=&quot; &amp; (5*{% endmath_inline %}random()) &amp; &quot;&amp;field2=&quot;     &amp; (5*$random()) &amp; &quot;&amp;status=MQTTPUBLISH&quot;
 </code></pre><p><img src="assets/images/2022-09-20-15-18-43.png" alt=""></p>
-
+<p><img src="assets/images/2022-09-20-15-22-44.png" alt=""></p>
+<p><img src="assets/images/2022-09-20-15-23-37.png" alt=""></p>
+<h1 id="connect-with-restdbio">Connect with <a href="https://restdb.io/" target="_blank">RESTDB.io</a></h1>
+<pre><code> curl -i -H &quot;Accept: application/json&quot;\
+     -H &quot;Content-Type: application/json&quot;\
+     -H &quot;x-apikey: 571ff13df5dc92ce5f846561240253ab1975e&quot;\
+     -X GET &quot;https://iot4pd-3be1.restdb.io/rest/users&quot;
+</code></pre>
                                 
                                 </section>
                             
@@ -201,7 +266,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["katex@git+https://github.com/gaoxiaosong/plugin-katex.git"],"pluginsConfig":{"katex":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2022-09-20T13:21:02.678Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-20T13:29:15.583Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.1","depth":1,"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["katex@git+https://github.com/gaoxiaosong/plugin-katex.git","mermaid-newface"],"pluginsConfig":{"katex":{},"mermaid-newface":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"README.md","mtime":"2022-09-28T12:46:03.398Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-09-28T12:46:26.952Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
