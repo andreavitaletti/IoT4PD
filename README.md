@@ -2,7 +2,7 @@
 
 The purpose of this project is to share materials on the lectures on the **Interactive Design Studio** @Sapienza University of Rome  where thhe focus is on [Internet of Things for Product Designers](https://sites.google.com/diag.uniroma1.it/iot4pd/home)
 
-Pleas click [here](https://classroom.google.com/c/NTUyNDQ3NzUwNTM5?cjc=cs2lvqd) to register in the google classroom of he 2022/23 
+Please click [here](https://classroom.google.com/c/NTUyNDQ3NzUwNTM5?cjc=cs2lvqd) to register in the google classroom 2022/23 
 
 ## Slides
 
