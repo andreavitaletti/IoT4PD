@@ -12,3 +12,11 @@ Please click [here](https://classroom.google.com/c/NTUyNDQ3NzUwNTM5?cjc=cs2lvqd)
 ## Code
 
 The code on the slides is available [here](code)
+
+## Tools
+
+* [Arduino IDE](https://www.arduino.cc/en/software)
+* At least one Node MCU ESP8266. It can be conveniently acquired on [Amazon.it](https://www.amazon.it/nodemcu-esp8266/s?k=nodemcu+esp8266) for less then 10 euro. 
+* Relevant Sensors and Actuators
+* [FRED: Front End for Node-RED](https://fred.sensetecnic.com). The free versino is sufficient.
+* [ThingsBoard](https://thingsboard.io). The demo version is sufficient
