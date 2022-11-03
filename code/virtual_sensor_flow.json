@@ -1,0 +1,374 @@
+[
+    {
+        "id": "3d58f779.e14888",
+        "type": "tab",
+        "label": "Virtual Sensor",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "d0148282.129cd",
+        "type": "inject",
+        "z": "3d58f779.e14888",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "v1/devices/me/telemetry",
+        "payload": "{\"temperature\":24,\"humidity\":57}",
+        "payloadType": "json",
+        "x": 210,
+        "y": 220,
+        "wires": [
+            [
+                "fa987844.dd5308",
+                "4208e184.f3a75"
+            ]
+        ]
+    },
+    {
+        "id": "fa987844.dd5308",
+        "type": "mqtt out",
+        "z": "3d58f779.e14888",
+        "name": "",
+        "topic": "",
+        "qos": "1",
+        "retain": "",
+        "broker": "4c8d3c0.47d33c4",
+        "x": 750,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "f092cd3e.da07e",
+        "type": "comment",
+        "z": "3d58f779.e14888",
+        "name": "mosquitto_pub -d -q 1 -h \"demo.thingsboard.io\" -p \"1883\" -t \"v1/devices/me/telemetry\" -u \"11223344556677\" -m \"{'temperature':27,'humidity':55}\" ",
+        "info": "",
+        "x": 520,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "7bcb5954.1cec78",
+        "type": "ui_slider",
+        "z": "3d58f779.e14888",
+        "name": "",
+        "label": "humidity",
+        "tooltip": "",
+        "group": "4ca87270.a9938c",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "",
+        "topicType": "str",
+        "min": 0,
+        "max": "60",
+        "step": 1,
+        "x": 190,
+        "y": 360,
+        "wires": [
+            [
+                "c13d7781.4fe308"
+            ]
+        ]
+    },
+    {
+        "id": "c13d7781.4fe308",
+        "type": "change",
+        "z": "3d58f779.e14888",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"humidity\": (payload) }\t",
+                "tot": "jsonata"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "v1/devices/me/telemetry",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 420,
+        "y": 360,
+        "wires": [
+            [
+                "4208e184.f3a75",
+                "fa987844.dd5308"
+            ]
+        ]
+    },
+    {
+        "id": "4208e184.f3a75",
+        "type": "debug",
+        "z": "3d58f779.e14888",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 790,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "65190571.a5d4ec",
+        "type": "comment",
+        "z": "3d58f779.e14888",
+        "name": "https://avitaletti.fred.sensetecnic.com/api/ui/",
+        "info": "",
+        "x": 230,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "38153bdd.31d7f4",
+        "type": "mqtt in",
+        "z": "3d58f779.e14888",
+        "name": "",
+        "topic": "v1/devices/me/rpc/request/+",
+        "qos": "1",
+        "datatype": "auto",
+        "broker": "4c8d3c0.47d33c4",
+        "x": 180,
+        "y": 480,
+        "wires": [
+            [
+                "72066d81.e50224"
+            ]
+        ]
+    },
+    {
+        "id": "2aeff16.5748f0e",
+        "type": "debug",
+        "z": "3d58f779.e14888",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 790,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "72066d81.e50224",
+        "type": "json",
+        "z": "3d58f779.e14888",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 530,
+        "y": 440,
+        "wires": [
+            [
+                "2aeff16.5748f0e",
+                "71872cc0.5b2314"
+            ]
+        ]
+    },
+    {
+        "id": "528c6272.d72c3c",
+        "type": "ui_template",
+        "z": "3d58f779.e14888",
+        "group": "4ca87270.a9938c",
+        "name": "ddddd",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "format": "<!DOCTYPE html>\n\n<style>\n:focus {\noutline: 0;\n}\nmd-led2{\n    display: block;\n\tborder-radius:80px;\n\tborder:2px solid #666666;\n\twidth: 16px; \n\theight:16px;\n\tmargin: 5px 0px 0px 5px; \t\n\tbackground: -webkit-radial-gradient(#9AF589, #42B821);\n    text-align:center;\t\n }\n\n</style>\n<p style=\"font-size:100%;text-align:center;margin: -2px;\">Actuator</p>\n<md-led2\n    ng-style=\"{background: msg.payload=='on' ?'':'#423f3f'}\"\n    \n>\n{{msg.payload == 'off' ? '' : ''}}\n</md-led2>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "x": 850,
+        "y": 720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "639b87b2.0d0848",
+        "type": "ui_switch",
+        "z": "3d58f779.e14888",
+        "name": "",
+        "label": "local switch",
+        "tooltip": "",
+        "group": "4ca87270.a9938c",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "on",
+        "onvalueType": "str",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "off",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "x": 260,
+        "y": 720,
+        "wires": [
+            [
+                "528c6272.d72c3c"
+            ]
+        ]
+    },
+    {
+        "id": "71872cc0.5b2314",
+        "type": "switch",
+        "z": "3d58f779.e14888",
+        "name": "",
+        "property": "payload.params",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "false"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 2,
+        "x": 380,
+        "y": 640,
+        "wires": [
+            [
+                "3c9ba12e.9f7a3e"
+            ],
+            [
+                "f4b553f6.11079"
+            ]
+        ]
+    },
+    {
+        "id": "3c9ba12e.9f7a3e",
+        "type": "change",
+        "z": "3d58f779.e14888",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "on",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 620,
+        "wires": [
+            [
+                "528c6272.d72c3c"
+            ]
+        ]
+    },
+    {
+        "id": "f4b553f6.11079",
+        "type": "change",
+        "z": "3d58f779.e14888",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "off",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 580,
+        "y": 660,
+        "wires": [
+            [
+                "528c6272.d72c3c"
+            ]
+        ]
+    },
+    {
+        "id": "4c8d3c0.47d33c4",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "demo.thingsboard.io",
+        "port": "1883",
+        "clientid": "",
+        "usetls": false,
+        "compatmode": false,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "4ca87270.a9938c",
+        "type": "ui_group",
+        "name": "IoT4PD virtual sensor and actuator",
+        "tab": "4464fb6e.f91284",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "4464fb6e.f91284",
+        "type": "ui_tab",
+        "name": "IoT4PD",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
