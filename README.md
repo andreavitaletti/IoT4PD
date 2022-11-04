@@ -6,6 +6,8 @@ Please click [here](https://classroom.google.com/c/NTUyNDQ3NzUwNTM5?cjc=cs2lvqd)
 
 ## Slides
 
+Slides are available [here](https://andreavitaletti.github.io/IoT4PD/)
+
 1. [Introduction](https://docs.google.com/presentation/d/1sW2nkvpnk8jGL-EirlWv2h9090t0kLcYOr5ypZo8V_k/edit?usp=sharing);
 2. [Collect](https://docs.google.com/presentation/d/1gyJ-4mH-_JyMx8qcZ1exdIIOuw2cFO48CQQye1Szfzc/edit?usp=sharing)
 
