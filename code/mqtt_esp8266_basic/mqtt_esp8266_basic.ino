@@ -1,3 +1,4 @@
+
 /*
  Basic ESP8266 MQTT example
  This sketch demonstrates the capabilities of the pubsub library in combination
@@ -17,11 +18,11 @@
   - Open the "Tools -> Board -> Board Manager" and click install for the ESP8266"
   - Select your ESP8266 in "Tools -> Board"
 */
+// Arduino_JSON - Version: Latest 
+#include <Arduino_JSON.h>
 
 #include <ESP8266WiFi.h>
 #include <PubSubClient.h>
-#include "arduino_secrets.h"
-
 // Update these with values suitable for your network.
 
 const char* ssid = SECRET_SSID;
@@ -60,23 +61,28 @@ void setup_wifi() {
 }
 
 void callback(char* topic, byte* payload, unsigned int length) {
-  Serial.print("Message arrived [");
-  Serial.print(topic);
-  Serial.print("] ");
-  for (int i = 0; i < length; i++) {
-    Serial.print((char)payload[i]);
-  }
-  Serial.println();
 
-  // Switch on the LED if an 1 was received as first character
-  if ((char)payload[0] == '1') {
+
+String str_pay((char*) payload);
+
+Serial.print(topic);
+Serial.print(" ");
+Serial.println(str_pay);
+
+// https://github.com/arduino-libraries/Arduino_JSON/blob/master/examples/JSONObject/JSONObject.ino
+JSONVar myObject = JSON.parse(str_pay);
+
+// [v1/devices/me/rpc/request/14] {"method":"setValue","params":true}
+
+Serial.println((bool) myObject["params"]);
+
+if ((bool) myObject["params"] == true) {
     digitalWrite(BUILTIN_LED, LOW);   // Turn the LED on (Note that LOW is the voltage level
     // but actually the LED is on; this is because
     // it is active low on the ESP-01)
   } else {
     digitalWrite(BUILTIN_LED, HIGH);  // Turn the LED off by making the voltage HIGH
   }
-
 }
 
 void reconnect() {
@@ -93,7 +99,7 @@ void reconnect() {
       // Once connected, publish an announcement...
       //client.publish("outTopic", "hello world");
       // ... and resubscribe
-      //client.subscribe("inTopic");
+      client.subscribe("v1/devices/me/rpc/request/+");
     } else {
       Serial.print("failed, rc=");
       Serial.print(client.state());
@@ -106,7 +112,7 @@ void reconnect() {
 
 void setup() {
   pinMode(BUILTIN_LED, OUTPUT);     // Initialize the BUILTIN_LED pin as an output
-  Serial.begin(115200);
+  Serial.begin(9600);
   setup_wifi();
   client.setServer(mqtt_server, 1883);
   client.setCallback(callback);
