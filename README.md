@@ -10,6 +10,7 @@ Slides are available [here](https://andreavitaletti.github.io/IoT4PD/)
 
 1. [Introduction](https://docs.google.com/presentation/d/1sW2nkvpnk8jGL-EirlWv2h9090t0kLcYOr5ypZo8V_k/edit?usp=sharing);
 2. [Collect](https://docs.google.com/presentation/d/1gyJ-4mH-_JyMx8qcZ1exdIIOuw2cFO48CQQye1Szfzc/edit?usp=sharing)
+3. [A simple thing video tutorial](https://youtu.be/2Mo8xcQOS3w)
 
 ## Code
 
@@ -21,7 +22,7 @@ One sensor, namely the potentiometer and one actuator, namely the led. Go [here]
 
 ## From the Smart Object to a Thing
 
-* Interacting with the ThingBoard. Go [here](code/mqtt_esp8266_basic/)
+* Interacting with the ThingBoard. Go [here](code/mqtt_esp8266_basic/). A Video Tutorial is available [here](https://youtu.be/2Mo8xcQOS3w)
 * Interacting with the Arduino IoT Cloud. Go [here](code/Arduino_IoT_Cloud/)
 
 
