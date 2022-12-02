@@ -29,9 +29,11 @@ One sensor, namely the potentiometer and one actuator, namely the led. Go [here]
 ## Tools
 
 * [Arduino IDE](https://www.arduino.cc/en/software)
+* [Arduino Web Editor](https://create.arduino.cc/editor)
 * At least one Node MCU ESP8266. It can be conveniently acquired on [Amazon.it](https://www.amazon.it/nodemcu-esp8266/s?k=nodemcu+esp8266) for less then 10 euro, but it is available im multiple places. 
 * Relevant Sensors and Actuators
 * [FRED: Front End for Node-RED](https://fred.sensetecnic.com). The free version is sufficient. Unfortunately FRED will be discontinued.
 * [ThingsBoard](https://thingsboard.io). The [demo version](https://demo.thingsboard.io/home) is sufficient
+* [Arduino IoT Cloud](https://create.arduino.cc/iot/things)
 * [Getting Started With the Arduino IoT Cloud](https://docs.arduino.cc/arduino-cloud/getting-started/iot-cloud-getting-started)
 * [Connecting ESP32 & ESP8266 to Arduino Cloud IoT](https://docs.arduino.cc/arduino-cloud/getting-started/esp-32-cloud)
